@@ -1,3 +1,31 @@
+<template>
+<span class="time-picker">
+  <input class="display-time" :id="id" v-model="displayTime" @click.stop="toggleDropdown" type="text" readonly />
+  <span class="clear-btn" v-if="!hideClearButton" v-show="!showDropdown && showClearBtn" @click.stop="clearTime">&times;</span>
+  <div class="time-picker-overlay" v-if="showDropdown" @click.stop="toggleDropdown"></div>
+  <div class="dropdown" v-show="showDropdown">
+    <div class="select-list">
+      <ul class="hours">
+        <li class="hint" v-text="hourType"></li>
+        <li v-for="hr in hours" v-text="hr" :class="{active: hour === hr}" @click.stop="select('hour', hr)"></li>
+      </ul>
+      <ul class="minutes">
+        <li class="hint" v-text="minuteType"></li>
+        <li v-for="m in minutes" v-text="m" :class="{active: minute === m}" @click.stop="select('minute', m)"></li>
+      </ul>
+      <ul class="seconds" v-if="secondType">
+        <li class="hint" v-text="secondType"></li>
+        <li v-for="s in seconds" v-text="s" :class="{active: second === s}" @click.stop="select('second', s)"></li>
+      </ul>
+      <ul class="apms" v-if="apmType">
+        <li class="hint" v-text="apmType"></li>
+        <li v-for="a in apms" v-text="a" :class="{active: apm === a}" @click.stop="select('apm', a)"></li>
+      </ul>
+    </div>
+  </div>
+</span>
+</template>
+
 <script>
 const CONFIG = {
   HOUR_TOKENS: ['HH', 'H', 'hh', 'h', 'kk', 'k'],
@@ -370,34 +398,6 @@ export default {
   }
 }
 </script>
-
-<template>
-<span class="time-picker">
-  <input class="display-time" :id="id" v-model="displayTime" @click.stop="toggleDropdown" type="text" readonly />
-  <span class="clear-btn" v-if="!hideClearButton" v-show="!showDropdown && showClearBtn" @click.stop="clearTime">&times;</span>
-  <div class="time-picker-overlay" v-if="showDropdown" @click.stop="toggleDropdown"></div>
-  <div class="dropdown" v-show="showDropdown">
-    <div class="select-list">
-      <ul class="hours">
-        <li class="hint" v-text="hourType"></li>
-        <li v-for="hr in hours" v-text="hr" :class="{active: hour === hr}" @click.stop="select('hour', hr)"></li>
-      </ul>
-      <ul class="minutes">
-        <li class="hint" v-text="minuteType"></li>
-        <li v-for="m in minutes" v-text="m" :class="{active: minute === m}" @click.stop="select('minute', m)"></li>
-      </ul>
-      <ul class="seconds" v-if="secondType">
-        <li class="hint" v-text="secondType"></li>
-        <li v-for="s in seconds" v-text="s" :class="{active: second === s}" @click.stop="select('second', s)"></li>
-      </ul>
-      <ul class="apms" v-if="apmType">
-        <li class="hint" v-text="apmType"></li>
-        <li v-for="a in apms" v-text="a" :class="{active: apm === a}" @click.stop="select('apm', a)"></li>
-      </ul>
-    </div>
-  </div>
-</span>
-</template>
 
 <style>
 @import './style/vue-timepicker.css';
