@@ -6,16 +6,16 @@
   <div class="dropdown" v-show="showDropdown">
     <div class="select-list">
       <ul class="hours">
-        <li class="hint" v-text="hourType"></li>
-        <li v-for="hr in hours" v-text="hr" :class="{active: hour === hr}" @click.stop="select('hour', hr)"></li>
+        <li v-for="(hr,index) in hours" v-text="hr" :class="{active: hour === hr}" @click.stop="select('hour', hr, index)"></li>
+        <li v-for="item in emptyLi" class="empty-li"></li>
       </ul>
       <ul class="minutes">
-        <li class="hint" v-text="minuteType"></li>
-        <li v-for="m in minutes" v-text="m" :class="{active: minute === m}" @click.stop="select('minute', m)"></li>
+        <li v-for="(m, index) in minutes" v-text="m" :class="{active: minute === m}" @click.stop="select('minute', m, index)"></li>
+        <li v-for="item in emptyLi" class="empty-li"></li>
       </ul>
       <ul class="seconds" v-if="secondType">
-        <li class="hint" v-text="secondType"></li>
-        <li v-for="s in seconds" v-text="s" :class="{active: second === s}" @click.stop="select('second', s)"></li>
+        <li v-for="(s, index) in seconds" v-text="s" :class="{active: second === s}" @click.stop="select('second', s, index)"></li>
+        <li v-for="item in emptyLi" class="empty-li"></li>
       </ul>
       <ul class="apms" v-if="apmType">
         <li class="hint" v-text="apmType"></li>
@@ -43,7 +43,9 @@ export default {
     format: {type: String},
     minuteInterval: {type: Number},
     secondInterval: {type: Number},
-    id: {type: String}
+    id: {type: String},
+      startHour: {type: Number, default: 0},
+      endHour: {type: Number, default: 23},
   },
 
   data () {
@@ -54,15 +56,17 @@ export default {
       apms: [],
       showDropdown: false,
       muteWatch: false,
-      hourType: 'HH',
-      minuteType: 'mm',
+      hourType: '小时',
+      minuteType: '分钟',
       secondType: '',
       apmType: '',
       hour: '',
       minute: '',
       second: '',
       apm: '',
-      fullValues: undefined
+      fullValues: undefined,
+        liHeight: 26,
+        emptyLi: ['','','','',''],
     }
   },
 
@@ -164,9 +168,12 @@ export default {
     },
 
     renderHoursList () {
-      const hoursCount = (this.hourType === 'h' || this.hourType === 'hh') ? 12 : 24
-      this.hours = []
-      for (let i = 0; i < hoursCount; i++) {
+//      const hoursCount = (this.hourType === 'h' || this.hourType === 'hh') ? 12 : 24
+        let t = this;
+      this.hours = [];
+
+
+      for (let i = t.startHour; i <= t.endHour; i++) {
         this.hours.push(this.formatValue(this.hourType, i))
       }
     },
@@ -370,16 +377,37 @@ export default {
     },
 
     toggleDropdown () {
-      this.showDropdown = !this.showDropdown
+        let t = this;
+        let hIndex = t.hours.indexOf(t.value.HH);
+        let mIndex = 0;
+        let sIndex = 0;
+
+        setTimeout(function(){
+            document.querySelector('.time-picker .dropdown .select-list .hours').scrollTop = hIndex* t.liHeight;
+            if(t.value.mm){
+                mIndex = t.minutes.indexOf(t.value.mm);
+                document.querySelector('.time-picker .dropdown .select-list .minutes').scrollTop = mIndex* t.liHeight;
+            }
+            if(t.value.ss){
+                sIndex = t.seconds.indexOf(t.value.ss);
+                document.querySelector('.time-picker .dropdown .select-list .seconds').scrollTop = sIndex* t.liHeight;
+            }
+
+        }, 0)
+
+        t.showDropdown = !t.showDropdown
     },
 
-    select (type, value) {
+    select (type, value, index) {
       if (type === 'hour') {
-        this.hour = value
+        this.hour = value;
+        document.querySelector('.time-picker .dropdown .select-list .hours').scrollTop = index* this.liHeight;
       } else if (type === 'minute') {
         this.minute = value
+          document.querySelector('.time-picker .dropdown .select-list .minutes').scrollTop = index* this.liHeight;
       } else if (type === 'second') {
         this.second = value
+          document.querySelector('.time-picker .dropdown .select-list .seconds').scrollTop = index* this.liHeight;
       } else if (type === 'apm') {
         this.apm = value
       }
