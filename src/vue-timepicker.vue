@@ -46,6 +46,7 @@ export default {
     id: {type: String},
       startHour: {type: Number, default: 0},
       endHour: {type: Number, default: 23},
+      error: {type: String, default: ''},
   },
 
   data () {
