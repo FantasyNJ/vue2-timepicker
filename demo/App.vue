@@ -26,6 +26,16 @@ export default {
                 :minute-interval="5"
                 :startHour="4"
         ></vue-timepicker>
+
+
+
+        <vue-timepicker
+                format="HH:mm"
+                v-model="yourTimeValue"
+                :hide-clear-button="true"
+                :minute-interval="5"
+                :startHour="4"
+        ></vue-timepicker>
     </div>
 </template>
 
