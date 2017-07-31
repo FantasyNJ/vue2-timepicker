@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d1b1b72b-ff52-4bfd-a747-722753dfda50" name="Default" comment="" />
+    <list default="true" id="d1b1b72b-ff52-4bfd-a747-722753dfda50" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/demo/App.vue" afterPath="$PROJECT_DIR$/demo/App.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/vue-timepicker.vue" afterPath="$PROJECT_DIR$/src/vue-timepicker.vue" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,45 +19,34 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/demo/App.vue">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="vue-timepicker.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/style/vue-timepicker.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="588">
-                  <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+                <state relative-caret-position="684">
+                  <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="vue-timepicker.vue" pinned="false" current-in-tab="false">
+          <file leaf-file-name="App.vue" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/demo/App.vue">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="570">
+                  <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="vue-timepicker.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/vue-timepicker.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="652">
-                  <caret line="402" column="21" lean-forward="true" selection-start-line="402" selection-start-column="21" selection-end-line="402" selection-end-column="21" />
+                <state relative-caret-position="691">
+                  <caret line="91" column="44" lean-forward="true" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
                   <folding>
-                    <element signature="e#2393#3185#0" expanded="false" />
-                    <element signature="e#3197#3461#0" expanded="false" />
+                    <element signature="e#3264#3528#0" expanded="false" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/.gitignore">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="235">
-                  <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -66,11 +58,11 @@
           <file leaf-file-name="vue-timepicker.vue" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/vue-timepicker.vue">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="686">
-                  <caret line="15" column="38" lean-forward="false" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="38" />
+                <state relative-caret-position="288">
+                  <caret line="308" column="77" lean-forward="true" selection-start-line="308" selection-start-column="77" selection-end-line="308" selection-end-column="77" />
                   <folding>
-                    <element signature="e#2393#3185#0" expanded="false" />
-                    <element signature="e#3197#3461#0" expanded="false" />
+                    <element signature="e#2398#3252#0" expanded="false" />
+                    <element signature="e#3264#3528#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
@@ -83,10 +75,12 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>display-time</find>
-      <find>hourType</find>
       <find>select</find>
       <find>toggleDropdown</find>
       <find>hours</find>
+      <find>hourType</find>
+      <find>displayTime</find>
+      <find>value</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -97,10 +91,10 @@
       <list>
         <option value="$PROJECT_DIR$/build/webpack.base.conf.js" />
         <option value="$PROJECT_DIR$/demo/index.html" />
-        <option value="$PROJECT_DIR$/demo/App.vue" />
         <option value="$PROJECT_DIR$/src/style/vue-timepicker.css" />
-        <option value="$PROJECT_DIR$/src/vue-timepicker.vue" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/demo/App.vue" />
+        <option value="$PROJECT_DIR$/src/vue-timepicker.vue" />
       </list>
     </option>
   </component>
@@ -123,8 +117,10 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="width" value="1280" />
-    <option name="height" value="800" />
+    <option name="x" value="-469" />
+    <option name="y" value="-1080" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -189,15 +185,15 @@
       <updated>1501391609270</updated>
       <workItem from="1501391610656" duration="2614000" />
       <workItem from="1501398753391" duration="6678000" />
-      <workItem from="1501470668569" duration="1611000" />
+      <workItem from="1501470668569" duration="6219000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10903000" />
+    <option name="totallyTimeSpent" value="15511000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="-469" y="-1080" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23591363" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -253,8 +249,7 @@
         <state relative-caret-position="10680">
           <caret line="389" column="28" lean-forward="true" selection-start-line="389" selection-start-column="28" selection-end-line="389" selection-end-column="28" />
           <folding>
-            <element signature="e#2393#3185#0" expanded="false" />
-            <element signature="e#3197#3461#0" expanded="false" />
+            <element signature="e#3264#3528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -279,8 +274,7 @@
         <state relative-caret-position="240">
           <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="41" />
           <folding>
-            <element signature="e#2393#3185#0" expanded="false" />
-            <element signature="e#3197#3461#0" expanded="false" />
+            <element signature="e#3264#3528#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -337,41 +331,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="760" column="0" lean-forward="false" selection-start-line="760" selection-start-column="0" selection-end-line="760" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/demo/App.vue">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+        <state relative-caret-position="958">
+          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/style/vue-timepicker.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="40" column="28" lean-forward="true" selection-start-line="40" selection-start-column="28" selection-end-line="40" selection-end-column="28" />
+        <state relative-caret-position="684">
+          <caret line="58" column="16" lean-forward="true" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/demo/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/vue-timepicker.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="652">
-          <caret line="402" column="21" lean-forward="true" selection-start-line="402" selection-start-column="21" selection-end-line="402" selection-end-column="21" />
+        <state relative-caret-position="691">
+          <caret line="91" column="44" lean-forward="true" selection-start-line="91" selection-start-column="44" selection-end-line="91" selection-end-column="44" />
           <folding>
-            <element signature="e#2393#3185#0" expanded="false" />
-            <element signature="e#3197#3461#0" expanded="false" />
+            <element signature="e#3264#3528#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="38" column="6" lean-forward="true" selection-start-line="38" selection-start-column="6" selection-end-line="38" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -39,7 +39,7 @@ export default {
 
   props: {
     value: {type: Object},
-    hideClearButton: {type: Boolean},
+    hideClearButton: {type: Boolean, default: true},
     format: {type: String},
     minuteInterval: {type: Number},
     secondInterval: {type: Number},
@@ -57,8 +57,8 @@ export default {
       apms: [],
       showDropdown: false,
       muteWatch: false,
-      hourType: '小时',
-      minuteType: '分钟',
+      hourType: 'HH',
+      minuteType: 'mm',
       secondType: '',
       apmType: '',
       hour: '',
@@ -74,6 +74,7 @@ export default {
   computed: {
     displayTime () {
       let formatString = String((this.format || 'HH:mm'))
+
       if (this.hour) {
         formatString = formatString.replace(new RegExp(this.hourType, 'g'), this.hour)
       }
@@ -86,6 +87,9 @@ export default {
       if (this.apm && this.apmType) {
         formatString = formatString.replace(new RegExp(this.apmType, 'g'), this.apm)
       }
+
+      formatString = formatString.replace(/[Hms]/g, ' ');
+
       return formatString
     },
     showClearBtn () {
@@ -247,6 +251,8 @@ export default {
         this.apm = timeValue[this.apmType]
       }
 
+      console.log(this.hour, this.minute);
+
       this.fillValues()
     },
 
@@ -349,6 +355,8 @@ export default {
         fullValues.ss = ''
       }
 
+      console.log(fullValues)
+
       this.fullValues = fullValues
       this.updateTimeValue(fullValues)
       this.$emit('change', {data: fullValues})
@@ -400,7 +408,7 @@ export default {
     },
 
     select (type, value, index) {
-        let t = this;
+      let t = this;
       if (type === 'hour') {
         this.hour = value;
           t.$refs.hours.scrollTop = index* this.liHeight;
