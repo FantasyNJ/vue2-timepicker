@@ -44,9 +44,9 @@ export default {
     minuteInterval: {type: Number},
     secondInterval: {type: Number},
     id: {type: String},
-      startHour: {type: Number, default: 0},
-      endHour: {type: Number, default: 23},
-      error: {type: String, default: ''},
+    startHour: {type: Number, default: 0},
+    endHour: {type: Number, default: 23},
+    error: {type: String, default: ''},
   },
 
   data () {
@@ -66,8 +66,8 @@ export default {
       second: '',
       apm: '',
       fullValues: undefined,
-        liHeight: 26,
-        emptyLi: ['','','','',''],
+      liHeight: 26,
+      emptyLi: ['','','','',''],
     }
   },
 
