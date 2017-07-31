@@ -38,6 +38,7 @@
   top: calc(34px + 2px);
   left: 0;
   background: #fff;
+  border: 1px solid #d1dbe5;
   box-shadow: 0 2px 6px #ccc;
   width: 140px;
   height: 156px;
