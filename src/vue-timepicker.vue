@@ -72,6 +72,14 @@ export default {
   },
 
   computed: {
+      isNull(){
+          let t = this;
+        if(t.hour == '' && t.minute == '' && t.second == ''){
+            return true;
+        }  else{
+            return false;
+        }
+      },
     displayTime () {
       let formatString = String((this.format || 'HH:mm'))
 
@@ -390,6 +398,18 @@ export default {
         let hIndex = t.hours.indexOf(t.value.HH);
         let mIndex = 0;
         let sIndex = 0;
+
+        if(t.hour == ''){
+            t.hour = t.hours[0];
+        }
+
+        if(t.minute == ''){
+            t.minute = t.minutes[0];
+        }
+
+        if(t.second == ''){
+            t.second = t.seconds[0];
+        }
 
         setTimeout(function(){
             t.$refs.hours.scrollTop = hIndex* t.liHeight;
