@@ -5,15 +5,15 @@
   <div class="time-picker-overlay" v-if="showDropdown" @click.stop="toggleDropdown"></div>
   <div class="dropdown" v-show="showDropdown">
     <div class="select-list">
-      <ul class="hours">
+      <ul class="hours" ref="hours">
         <li v-for="(hr,index) in hours" v-text="hr" :class="{active: hour === hr}" @click.stop="select('hour', hr, index)"></li>
         <li v-for="item in emptyLi" class="empty-li"></li>
       </ul>
-      <ul class="minutes">
+      <ul class="minutes" ref="minutes">
         <li v-for="(m, index) in minutes" v-text="m" :class="{active: minute === m}" @click.stop="select('minute', m, index)"></li>
         <li v-for="item in emptyLi" class="empty-li"></li>
       </ul>
-      <ul class="seconds" v-if="secondType">
+      <ul class="seconds" ref="seconds" v-if="secondType">
         <li v-for="(s, index) in seconds" v-text="s" :class="{active: second === s}" @click.stop="select('second', s, index)"></li>
         <li v-for="item in emptyLi" class="empty-li"></li>
       </ul>
@@ -384,14 +384,14 @@ export default {
         let sIndex = 0;
 
         setTimeout(function(){
-            document.querySelector('.time-picker .dropdown .select-list .hours').scrollTop = hIndex* t.liHeight;
+            t.$refs.hours.scrollTop = hIndex* t.liHeight;
             if(t.value.mm){
                 mIndex = t.minutes.indexOf(t.value.mm);
-                document.querySelector('.time-picker .dropdown .select-list .minutes').scrollTop = mIndex* t.liHeight;
+                t.$refs.minutes.scrollTop = mIndex* t.liHeight;
             }
             if(t.value.ss){
                 sIndex = t.seconds.indexOf(t.value.ss);
-                document.querySelector('.time-picker .dropdown .select-list .seconds').scrollTop = sIndex* t.liHeight;
+                t.$refs.seconds.scrollTop = sIndex* t.liHeight;
             }
 
         }, 0)
@@ -400,15 +400,16 @@ export default {
     },
 
     select (type, value, index) {
+        let t = this;
       if (type === 'hour') {
         this.hour = value;
-        document.querySelector('.time-picker .dropdown .select-list .hours').scrollTop = index* this.liHeight;
+          t.$refs.hours.scrollTop = index* this.liHeight;
       } else if (type === 'minute') {
         this.minute = value
-          document.querySelector('.time-picker .dropdown .select-list .minutes').scrollTop = index* this.liHeight;
+          t.$refs.minutes.scrollTop = index* this.liHeight;
       } else if (type === 'second') {
         this.second = value
-          document.querySelector('.time-picker .dropdown .select-list .seconds').scrollTop = index* this.liHeight;
+          t.$refs.seconds.scrollTop = index* this.liHeight;
       } else if (type === 'apm') {
         this.apm = value
       }
