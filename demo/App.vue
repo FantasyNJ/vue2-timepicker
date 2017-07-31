@@ -36,6 +36,7 @@ export default {
                 :hide-clear-button="false"
                 :minute-interval="5"
                 :startHour="4"
+                error="haha"
         ></vue-timepicker>
     </div>
 </template>
