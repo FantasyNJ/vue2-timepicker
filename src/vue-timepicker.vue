@@ -1,6 +1,6 @@
 <template>
 <span class="time-picker">
-  <input class="display-time" :id="id" v-model="displayTime" @click.stop="toggleDropdown" type="text" readonly />
+  <input class="display-time" :id="id" v-model="displayTime" @click.stop="toggleDropdown" type="text" readonly :class="{'error': !!error}"/>
   <span class="clear-btn" v-if="!hideClearButton" v-show="!showDropdown && showClearBtn" @click.stop="clearTime">&times;</span>
   <div class="time-picker-overlay" v-if="showDropdown" @click.stop="toggleDropdown"></div>
   <div class="dropdown" v-show="showDropdown">
@@ -72,6 +72,14 @@ export default {
   },
 
   computed: {
+      isNull(){
+          let t = this;
+        if(t.hour == '' && t.minute == '' && t.second == ''){
+            return true;
+        }  else{
+            return false;
+        }
+      },
     displayTime () {
       let formatString = String((this.format || 'HH:mm'))
 
@@ -88,7 +96,7 @@ export default {
         formatString = formatString.replace(new RegExp(this.apmType, 'g'), this.apm)
       }
 
-      formatString = formatString.replace(/[Hms]/g, '0');
+      formatString = formatString.replace(/[Hms]/g, ' ');
 
       return formatString
     },
@@ -390,6 +398,18 @@ export default {
         let hIndex = t.hours.indexOf(t.value.HH);
         let mIndex = 0;
         let sIndex = 0;
+
+        if(t.hour == ''){
+            t.hour = t.hours[0];
+        }
+
+        if(t.minute == ''){
+            t.minute = t.minutes[0];
+        }
+
+        if(t.second == ''){
+            t.second = t.seconds[0];
+        }
 
         setTimeout(function(){
             t.$refs.hours.scrollTop = hIndex* t.liHeight;
