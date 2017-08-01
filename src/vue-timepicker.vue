@@ -88,7 +88,7 @@ export default {
         formatString = formatString.replace(new RegExp(this.apmType, 'g'), this.apm)
       }
 
-      formatString = formatString.replace(/[Hms]/g, ' ');
+      formatString = formatString.replace(/[Hms]/g, '0');
 
       return formatString
     },
